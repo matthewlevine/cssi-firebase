@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<title>Blogosaurus: New Post</title>
+<link href="blogosaurus.css" rel="stylesheet">
+<header>
+  <h1>Blogasaurus</h1>
+
+  <nav>
+    <ul>
+      <li><a href="/">Home</a></li>
+      <li class="selected">Blog</li>
+      <li><a href="new.html">New post</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main>
+
+</main>
+
+<template id="post">
+  <section>
+    <h2 class="title"></h2>
+    <div class="content"></div>
+    <div>By <span class="name"></span></div>
+  </section>
+</template>
+
+<script src="/__/firebase/7.6.2/firebase-app.js"></script>
+<script src="/__/firebase/7.6.2/firebase-firestore.js"></script>
+<script src="/__/firebase/init.js"></script>
+<script src="blogosaurus.js"></script>
+<script>
+
+  loadPosts();
+
+</script>

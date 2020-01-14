@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<title>Blogosaurus: New Post</title>
+<link href="blogosaurus.css" rel="stylesheet">
+<header>
+  <h1>Blogasaurus</h1>
+
+  <nav>
+    <ul>
+      <li><a href="/">Home</a></li>
+      <li><a href="/blog.html">Blog</a></li>
+      <li class="selected">New post</li>
+    </ul>
+  </nav>
+</header>
+
+
+<main>
+  <section id="signin">
+    <h2>Please sign in</h2>
+    <button>Sign In with Google</button>
+  </section>
+  <section id="new-post">
+    <h2>New Post</h2>
+    <form>
+      <div class="text-field">
+        <label for="name">Your name</label>
+        <input id="name" name="name">
+      </div>
+      <div class="text-field">
+        <label for="title">Title</label>
+        <input id="title" name="title">
+      </div>
+      <div class="text-area">
+        <label for="content">Content</label>
+        <textarea id="content" name="content"></textarea>
+      </div>
+      <button type="submit">Save</button>
+    </form>
+    <button id="signout">Sign out</button>
+  </section>
+</main>
+
+<script src="/__/firebase/7.6.2/firebase-app.js"></script>
+<script src="/__/firebase/7.6.2/firebase-auth.js"></script>
+<script src="/__/firebase/7.6.2/firebase-firestore.js"></script>
+<script src="/__/firebase/init.js"></script>
+<script src="blogosaurus.js"></script>
+<script>
+  firebase.auth().onAuthStateChanged(checkUser);
+
+  let postForm = document.querySelector('#new-post form');
+  postForm.addEventListener('submit', savePost);
+
+  let signinButton = document.querySelector ('#signin button');
+  signinButton.addEventListener('click', signIn);
+
+  let signoutButton = document.querySelector ('#signout');
+  signoutButton.addEventListener('click', signOut);
+
+</script>

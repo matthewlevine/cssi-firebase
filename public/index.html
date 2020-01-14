@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<title>Blogosaurus</title>
+<link href="blogosaurus.css" rel="stylesheet">
+<header>
+  <h1>Blogasaurus</h1>
+
+  <nav>
+    <ul>
+      <li class="selected">Home</li>
+      <li><a href="blog.html">Blog</a></li>
+      <li><a href="new.html">New post</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main>
+  <section>
+    <h2>All About Me</h2>
+    <p>I live in San Francisco and love coffee.</p>
+    <img class="photo" width="150" src="johnson.jpg" alt="A portrait of Samuel Johnson.">
+  </section>
+
+  <section>
+    <h2>My Favorite YouTube Videos</h2>
+    <ol>
+      <li><a href="https://www.youtube.com/watch?v=OTVE5iPMKLg">Coffee: The Greatest Addiction Ever</a></li>
+      <li><a href="https://www.youtube.com/watch?v=9Jcxc-ddWKI">Calculate your pet's HP</a></li>
+    </ol>
+  </section>
+
+  <section>
+    <h2>How I Spent My Summer Vacation</h2>
+    <p>I went on lots of walks, read a few books, and drank lots of coffee.</p>
+  </section>
+
+</main>
+
+<template id="post">
+  <section>
+    <h2 class="title"></h2>
+    <div class="content"></div>
+    <div>By <span class="name"></span></div>
+  </section>
+</template>
+
+<script src="/__/firebase/7.6.2/firebase-app.js"></script>
+<script src="/__/firebase/7.6.2/firebase-firestore.js"></script>
+<script src="/__/firebase/init.js"></script>
+
+<script src="blogosaurus.js"></script>
+<script>
+  loadPosts();
+</script>
