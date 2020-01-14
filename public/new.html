@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <title>Blogosaurus: New Post</title>
 <link href="blogosaurus.css" rel="stylesheet">
+
 <header>
   <h1>Blogasaurus</h1>
-
   <nav>
     <ul>
       <li><a href="/">Home</a></li>
@@ -46,14 +46,19 @@
 <script src="/__/firebase/init.js"></script>
 <script src="blogosaurus.js"></script>
 <script>
+
+  // Check the current user and run the checkUser() function.
   firebase.auth().onAuthStateChanged(checkUser);
 
+  // Handle new post form submission.
   let postForm = document.querySelector('#new-post form');
   postForm.addEventListener('submit', savePost);
 
+  // Handle the sign-in button.
   let signinButton = document.querySelector ('#signin button');
   signinButton.addEventListener('click', signIn);
 
+  // Handle the sign-out button.
   let signoutButton = document.querySelector ('#signout');
   signoutButton.addEventListener('click', signOut);
 
